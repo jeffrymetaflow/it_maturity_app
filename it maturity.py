@@ -1,10 +1,11 @@
 import streamlit as st
-import json
 import pandas as pd
 
-# Load grouped questions from JSON
-with open("/mnt/data/grouped_questions.json") as f:
-    grouped_questions = json.load(f)
+# Embedded grouped questions JSON (shortened for readability — insert full content below)
+grouped_questions = " + json.dumps(grouped_questions_data, indent=2)
+    }
+  ]
+}
 
 st.set_page_config(page_title="IT Maturity Assessment", layout="wide")
 st.title("🧠 IT Maturity Assessment Tool")

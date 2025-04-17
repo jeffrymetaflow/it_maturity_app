@@ -146,10 +146,9 @@ if submitted:
     score_df = pd.DataFrame(score_data).sort_values(by="Category")
     st.dataframe(score_df, use_container_width=True)
 
-    # Heatmap visual (Streamlit-native heatmap using styled dataframe)
+    # Heatmap visual (Streamlit-compatible, no matplotlib)
     st.subheader("🔵 Heatmap View of Maturity by Category")
-    heatmap_df = score_df.set_index("Category")
-    st.dataframe(heatmap_df.style.format("{:.1f}").highlight_gradient(axis=0, cmap="coolwarm"))
+    st.dataframe(score_df.style.format({"Score (%)": "{:.1f}"})).highlight_gradient(axis=0, cmap="coolwarm"))
 
     # Bar chart view
     st.subheader("📈 Bar Chart of Scores")
@@ -173,4 +172,3 @@ if submitted:
         else:
             rec = f"❌ *{category}* is low maturity. Prioritize modernization, documentation, and automation."
         st.markdown(rec)
-

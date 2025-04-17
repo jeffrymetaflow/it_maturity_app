@@ -158,9 +158,8 @@ if submitted:
     # Bar chart view
     st.subheader("📈 Bar Chart of Scores")
     st.bar_chart(score_df.set_index("Category"))
-
-        st.markdown("""
-    ### 🔍 Interpretation:
+    st.markdown("""
+### 🔍 Interpretation:
     - **80%+**: High maturity — optimized or automated
     - **50-79%**: Moderate maturity — standardized or in transition
     - **Below 50%**: Low maturity — ad-hoc or siloed

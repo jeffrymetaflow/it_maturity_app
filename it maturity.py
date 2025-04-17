@@ -148,7 +148,7 @@ if submitted:
 
     # Heatmap visual (Streamlit-native heatmap using styled dataframe)
     st.subheader("🔵 Heatmap View of Maturity by Category")
-        heatmap_df = score_df.set_index("Category")
+    heatmap_df = score_df.set_index("Category")
     st.dataframe(heatmap_df.style.format("{:.1f}").highlight_gradient(axis=0, cmap="coolwarm"))
 
     # Bar chart view

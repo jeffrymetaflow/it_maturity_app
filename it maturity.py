@@ -148,7 +148,7 @@ if submitted:
 
     # Heatmap visual (Streamlit-compatible, no matplotlib)
     st.subheader("🔵 Heatmap View of Maturity by Category")
-    st.dataframe(score_df.style.format({"Score (%)": "{:.1f}"})).highlight_gradient(axis=0, cmap="coolwarm"))
+    st.dataframe(score_df.style.format({"Score (%)": "{:.1f}"}))
 
     # Bar chart view
     st.subheader("📈 Bar Chart of Scores")

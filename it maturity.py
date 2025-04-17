@@ -44,8 +44,7 @@ grouped_questions = {
         "Capacity management meets demand",
         "Network Roles, flows, and key sequences are continually monitored and measured for performance",
         "User restoration capabilities",
-        "Shared Pools of Resources"
-    ]
+        ,
     "Awareness, measured, semi-automated                                 Consolidated": [
         "Multiple VMs/Server",
         "Application not tied to physical infrastructure",
@@ -109,8 +108,6 @@ grouped_questions = {
         "Network metrics are used effectively to control different flows and sequence variations"
     ]
 }
-    }
-  ]
 }
 
 st.set_page_config(page_title="IT Maturity Assessment", layout="wide")
@@ -182,3 +179,4 @@ if submitted:
         else:
             rec = f"❌ *{category}* is low maturity. Prioritize modernization, documentation, and automation."
         st.markdown(rec)
+

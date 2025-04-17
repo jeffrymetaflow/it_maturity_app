@@ -130,7 +130,6 @@ with st.form("maturity_form"):
     submitted = st.form_submit_button("Submit Assessment")
 
 # Scoring and Results
-import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 if submitted:
@@ -152,7 +151,13 @@ if submitted:
         # Heatmap visual
     st.subheader("🔵 Heatmap View of Maturity by Category")
     fig, ax = plt.subplots(figsize=(10, 6))
-    sns.heatmap(score_df.set_index("Category"), annot=True, fmt=".1f", cmap="coolwarm", cbar=True, linewidths=0.5, ax=ax)
+    ax.imshow(score_df.set_index("Category"), cmap="coolwarm", aspect="auto")
+    ax.set_xticks(range(len(score_df.columns) - 1))
+    ax.set_xticklabels(["Score (%)"])
+    ax.set_yticks(range(len(score_df)))
+    ax.set_yticklabels(score_df["Category"].values)
+    for i, score in enumerate(score_df["Score (%)"]):
+        ax.text(0, i, f"{score:.1f}", va='center', ha='center', color='white'), annot=True, fmt=".1f", cmap="coolwarm", cbar=True, linewidths=0.5, ax=ax)
     st.pyplot(fig)
 
     # Bar chart view

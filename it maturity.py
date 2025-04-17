@@ -153,6 +153,8 @@ if submitted:
     # Bar chart view
     st.subheader("📈 Bar Chart of Scores")
     st.bar_chart(score_df.set_index("Category"))
+
+    
     st.markdown("""
 ### 🔍 Interpretation:
     - **80%+**: High maturity — optimized or automated

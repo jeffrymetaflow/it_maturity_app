@@ -157,7 +157,7 @@ if submitted:
     ax.set_yticks(range(len(score_df)))
     ax.set_yticklabels(score_df["Category"].values)
     for i, score in enumerate(score_df["Score (%)"]):
-        ax.text(0, i, f"{score:.1f}", va='center', ha='center', color='white'), annot=True, fmt=".1f", cmap="coolwarm", cbar=True, linewidths=0.5, ax=ax)
+        ax.text(0, i, f"{score:.1f}", va='center', ha='center', color='white')
     st.pyplot(fig)
 
     # Bar chart view

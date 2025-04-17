@@ -3,7 +3,7 @@ import json
 import pandas as pd
 
 # Load grouped questions from JSON
-with open("grouped_questions.json") as f:
+with open("/mnt/data/grouped_questions.json") as f:
     grouped_questions = json.load(f)
 
 st.set_page_config(page_title="IT Maturity Assessment", layout="wide")

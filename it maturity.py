@@ -44,7 +44,7 @@ grouped_questions = {
         "Capacity management meets demand",
         "Network Roles, flows, and key sequences are continually monitored and measured for performance",
         "User restoration capabilities",
-        ,
+        "Shared Pools of Resources",
     "Awareness, measured, semi-automated                                 Consolidated": [
         "Multiple VMs/Server",
         "Application not tied to physical infrastructure",

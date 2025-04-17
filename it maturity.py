@@ -130,8 +130,6 @@ with st.form("maturity_form"):
     submitted = st.form_submit_button("Submit Assessment")
 
 # Scoring and Results
-import matplotlib.pyplot as plt
-import numpy as np
 if submitted:
     st.header("📊 Maturity Assessment Results")
     score_data = []
@@ -148,17 +146,10 @@ if submitted:
     score_df = pd.DataFrame(score_data).sort_values(by="Category")
     st.dataframe(score_df, use_container_width=True)
 
-        # Heatmap visual
+        # Heatmap visual (Streamlit-native heatmap using styled dataframe)
     st.subheader("🔵 Heatmap View of Maturity by Category")
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.imshow(score_df.set_index("Category"), cmap="coolwarm", aspect="auto")
-    ax.set_xticks(range(len(score_df.columns) - 1))
-    ax.set_xticklabels(["Score (%)"])
-    ax.set_yticks(range(len(score_df)))
-    ax.set_yticklabels(score_df["Category"].values)
-    for i, score in enumerate(score_df["Score (%)"]):
-        ax.text(0, i, f"{score:.1f}", va='center', ha='center', color='white')
-    st.pyplot(fig)
+    styled_df = score_df.set_index("Category").style.background_gradient(cmap="coolwarm")
+    st.dataframe(styled_df, use_container_width=True)
 
     # Bar chart view
     st.subheader("📈 Bar Chart of Scores")
